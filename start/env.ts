@@ -17,4 +17,12 @@ export default await Env.create(new URL('../', import.meta.url), {
   APP_KEY: Env.schema.string(),
   HOST: Env.schema.string({ format: 'host' }),
   LOG_LEVEL: Env.schema.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace']),
+  TZ: Env.schema.enum(['UTC'] as const),
+  DB_CONNECTION: Env.schema.enum(['mysql'] as const),
+  DB_CLIENT: Env.schema.enum(['mysql', 'mysql2'] as const),
+  DB_HOST: Env.schema.string({ format: 'host' }),
+  DB_PORT: Env.schema.number(),
+  DB_USER: Env.schema.string(),
+  DB_PASSWORD: Env.schema.string.optional(),
+  DB_NAME: Env.schema.string(),
 })
