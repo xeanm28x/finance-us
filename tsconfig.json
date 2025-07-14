@@ -2,6 +2,10 @@
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "rootDir": "./",
-    "outDir": "./build"
+    "outDir": "./build",
+    "strictPropertyInitialization": false
+  },
+  "paths": {
+    "@ioc:Adonis/Lucid/*": ["node_modules/@adonisjs/lucid/build/providers/*"]
   }
 }
